@@ -4,21 +4,19 @@ stunde = 5 #randrange(1, 25)                                                    
 
 hälfte_von_stunde = stunde / 2                                      # die hälfte der Uhrzeit wird bei der Multiplikation gebraucht
 if stunde % 2:
-    hälfte_von_stunde = stunde / 2 + 0.5
-hälfte_von_stunde = int(hälfte_von_stunde)
+    hälfte_von_stunde = int(hälfte_von_stunde) + 1
 
 viertel_von_stunde = hälfte_von_stunde / 2
 if hälfte_von_stunde % 2:
-    viertel_von_stunde = hälfte_von_stunde / 2 + 0.5
-viertel_von_stunde = int(viertel_von_stunde)
+    viertel_von_stunde = int(viertel_von_stunde) + 1
 
 erste_operatoration_für_stunde = 1 #randrange(1, 5)                    # 1=+|2=-|3=/|4=*
 zweite_operatoration_für_stunde = 3 #randrange(1, 5)                  # 1=+|2=-|3=/|4=*
 
-#if stunde % 2 > 0 and stunde % 3 > 0:
-#    zweite_operatoration_für_stunde = randrange(1, 4)          # Primzahlen können nicht das Ergebnis einer Multiplikation werden, weswegen diese ausgeschlossen wird
-#if stunde < 5:
-#    zweite_operatoration_für_stunde = randrange(2, 4)
+if stunde % 2 > 0 and stunde % 3 > 0:
+    zweite_operatoration_für_stunde = randrange(1, 4)          # Primzahlen können nicht das Ergebnis einer Multiplikation werden, weswegen diese ausgeschlossen wird
+if stunde < 5:
+    zweite_operatoration_für_stunde = randrange(2, 4)
 
 if zweite_operatoration_für_stunde == 1:
     zweiter_operator_für_stunde = "+"
