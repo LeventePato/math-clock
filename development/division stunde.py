@@ -1,5 +1,5 @@
 from random import randrange
-from helpers import factor_division_addition
+from development.helpers_division import factor_division_addition
 
 stunde = 16 #randrange(5, 24)                                                         # TODO: live-Uhrzeit einfügen
 
@@ -53,7 +53,7 @@ if erste_operatoration_für_stunde == 3:           # x : y ? z
         zweite_zahl = erste_zahl / ergebnis_erste_rechnung 
 
     else:                                               # x : y * z
-        dritte_zahl = stunde  randrange(2, hälfte_von_stunde)
+        dritte_zahl = stunde - randrange(2, int(hälfte_von_stunde))
         ergebnis_erste_rechnung = stunde / dritte_zahl
         erste_zahl = randrange(int(ergebnis_erste_rechnung * 2), 100)
         zweite_zahl = erste_zahl / ergebnis_erste_rechnung
