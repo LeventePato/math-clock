@@ -11,20 +11,6 @@ def count_factors(n):
                 count += 1
     return count
 
-def save_factors(n):
-    variables = {}
-    base_name = "factors_of_"
-    for i in range(1,24):
-        key = f"{base_name}{i}"
-        variables[key] = count_factors(n)
-    
-stunde = randrange(1, 25)
-hälfte_von_stunde = stunde / 2
-if hälfte_von_stunde % 1 > 0:
-    hälfte_von_stunde = int(stunde / 2) + 1
-
-# start refactoring this into a function
-
 def factor_division_addition(stunde):
     dritte_zahl = stunde - randrange (2,stunde -2)
     ergebnis_erste_rechnung = stunde - dritte_zahl
@@ -55,8 +41,9 @@ def factor_division_multiplication(stunde):
     hälfte_von_stunde = stunde / 2
     if hälfte_von_stunde % 1 > 0:
         hälfte_von_stunde = int(stunde / 2) + 1
-    dritte_zahl = stunde - randrange(2, hälfte_von_stunde)
-    ergebnis_erste_rechnung = stunde / dritte_zahl
-    erste_zahl = randrange(int(ergebnis_erste_rechnung * 2), 100)
-    zweite_zahl = erste_zahl / ergebnis_erste_rechnung
+    ergebnis_erste_rechnung = randrange(2, hälfte_von_stunde)
+    dritte_zahl = stunde / ergebnis_erste_rechnung
+    zweite_zahl = randrange(2, int(ergebnis_erste_rechnung / 2) + 1)
+    erste_zahl = ergebnis_erste_rechnung * zweite_zahl
     return erste_zahl, zweite_zahl, dritte_zahl
+
