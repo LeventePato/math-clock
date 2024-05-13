@@ -26,6 +26,8 @@ while running:
     
     now = datetime.now()
     current_time = now.strftime("%H:%M")
+    stunde = now.strftime("%H")
+    minute = now.strftime("%M")
     
     # Render the text
     text = font.render(str(current_time), True, (255, 255, 255))  # White text
@@ -37,7 +39,7 @@ while running:
 
     # Update the display
     pygame.display.flip()
-    sleep(1)
+    sleep()
 
 # Quit Pygame
 pygame.quit()
