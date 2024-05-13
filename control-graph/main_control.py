@@ -1,4 +1,5 @@
-from time_tracking import track_time
+from time import sleep
+from datetime import datetime
 import pygame
 import sys #???
 
@@ -15,15 +16,19 @@ font = pygame.font.Font('/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf'
 # Main loop
 running = True
 while running:
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False 
-
+    
+    now = datetime.now()
+    current_time = now.strftime("%H:%M")
+    
     # Render the text
-    text = font.render('Hello, Raspberry Pi!', True, (255, 255, 255))  # White text
+    text = font.render(str(current_time), True, (255, 255, 255))  # White text
     text_rect = text.get_rect(center=(size[0] / 2, size[1] / 2))
 
     # Clear the screen and set the screen background
@@ -32,7 +37,10 @@ while running:
 
     # Update the display
     pygame.display.flip()
+    sleep(1)
 
 # Quit Pygame
 pygame.quit()
 sys.exit()
+
+
