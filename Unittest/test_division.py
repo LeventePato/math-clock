@@ -36,7 +36,7 @@ class TestDivisionMultiplication(unittest.TestCase):
             stunde = stunde + 1
             x,y,z = factor_division_multiplication(stunde)
             self.assertEqual(x/y*z, stunde)
-
+            self.assertEqual()
 
 if __name__ == '__main__':
     unittest.main()
