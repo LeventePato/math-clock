@@ -8,3 +8,4 @@ def track_time():
         current_time = now.strftime("%H:%M")
         sleep(10)
 
+aufgabe_für_stunde =  10 * 4 / 20
