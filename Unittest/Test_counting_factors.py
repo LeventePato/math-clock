@@ -1,7 +1,7 @@
 import unittest
 from random import randrange
-from helpers_division import factor_division_addition
-from helpers_division import count_factors
+from division.helpers_division import factor_division_addition
+from division.helpers_division import count_factors
 
 
 variables = {}
