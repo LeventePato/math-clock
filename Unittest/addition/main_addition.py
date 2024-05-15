@@ -5,7 +5,6 @@ from helpers_addition import factor_addition_division
 from helpers_addition import factor_addition_multiplication
 
 stunde = 1
-
 erste_operation_für_stunde = 1
 zweite_operation_für_stunde = randrange(1, 5)
 
@@ -22,3 +21,4 @@ if erste_operation_für_stunde == 1:
 
     else:
         factor_addition_multiplication(stunde)
+

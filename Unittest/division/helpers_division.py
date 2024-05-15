@@ -41,7 +41,7 @@ def factor_division_multiplication(stunde):
     hälfte_von_stunde = int(stunde / 2) + 1
     dritte_zahl = randrange(2, hälfte_von_stunde)
     ergebnis_erste_rechnung = stunde / dritte_zahl
-    erste_zahl = randrange(ergebnis_erste_rechnung * 2, 100)
+    erste_zahl = randrange(int(ergebnis_erste_rechnung * 2), 100)
     zweite_zahl = erste_zahl / ergebnis_erste_rechnung
     return erste_zahl, zweite_zahl, dritte_zahl
 

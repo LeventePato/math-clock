@@ -33,10 +33,10 @@ def factor_subtraction_division(stunde):
     return erste_zahl, zweite_zahl, dritte_zahl
 
 def factor_subtraction_multiplication(stunde):
-    ergebnis_erste_rechnung = randrange(stunde + 2, 100)
+    ergebnis_erste_rechnung = randrange(2, stunde - 1)
     while count_factors(ergebnis_erste_rechnung) < 3:
-        ergebnis_erste_rechnung = randrange(stunde + 2, 100)
-    erste_zahl = ergebnis_erste_rechnung - stunde
+        ergebnis_erste_rechnung = randrange(4, stunde - 1)
+    erste_zahl = ergebnis_erste_rechnung - stunde 
     zweite_zahl = randrange(2, int(ergebnis_erste_rechnung / 2) + 1)
     dritte_zahl = ergebnis_erste_rechnung / zweite_zahl
     return erste_zahl, zweite_zahl, dritte_zahl
