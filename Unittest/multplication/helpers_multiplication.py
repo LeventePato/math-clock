@@ -10,31 +10,27 @@ def count_factors(n):
     return count
 
 def factor_multiplication_addition(stunde):
-    ergebnis_erste_rechnung = randrange(4, stunde - 1)
+    erste_zahl = randrange(2, int(stunde / 2))
+    ergebnis_erste_rechnung = stunde
+    while ergebnis_erste_rechnung > stunde - 1:
+        zweite_zahl = randrange(2, int(ergebnis_erste_rechnung / erste_zahl) + 1)
+        ergebnis_erste_rechnung = erste_zahl * zweite_zahl
     dritte_zahl = stunde - ergebnis_erste_rechnung
-    erste_zahl = randrange(2, ergebnis_erste_rechnung - 1)
-    zweite_zahl = ergebnis_erste_rechnung - erste_zahl
     return erste_zahl, zweite_zahl, dritte_zahl
 
 def factor_multiplication_subtraction(stunde):
-    ergebnis_erste_rechnung = randrange(stunde + 2, 100)
+    erste_zahl = randrange(2, 50)
+    ergebnis_erste_rechnung = stunde
+    while ergebnis_erste_rechnung <  stunde + 1:
+        zweite_zahl = randrange(2, 50)
+        ergebnis_erste_rechnung = erste_zahl * zweite_zahl
     dritte_zahl = ergebnis_erste_rechnung - stunde
-    erste_zahl = randrange(2, ergebnis_erste_rechnung - 2)
-    zweite_zahl = ergebnis_erste_rechnung - erste_zahl
     return erste_zahl, zweite_zahl, dritte_zahl
 
-def factor_multiplication_division(stunde):
-    ergebnis_erste_rechnung = randrange(2, stunde -1)
-    erste_zahl = stunde - ergebnis_erste_rechnung
-    dritte_zahl = randrange(2, 50)
-    zweite_zahl = ergebnis_erste_rechnung * dritte_zahl
-    return erste_zahl, zweite_zahl, dritte_zahl
 
-def factor_multiplication_multiplication(stunde):
-    ergebnis_erste_rechnung = randrange(4, stunde - 1)
-    while count_factors(ergebnis_erste_rechnung) < 3:
-        ergebnis_erste_rechnung = randrange(4, stunde - 1)
-    erste_zahl = stunde - ergebnis_erste_rechnung 
-    zweite_zahl = randrange(2, int(ergebnis_erste_rechnung / 2) + 1)
-    dritte_zahl = ergebnis_erste_rechnung / zweite_zahl
-    return erste_zahl, zweite_zahl, dritte_zahl
+#def factor_multiplication_division(stunde):
+ #   dritte_zahl = randrange(2, 50)
+  #  ergebnis_erste_rechnung = randrange(2, )
+
+#def factor_multiplication_multiplication(stunde):
+

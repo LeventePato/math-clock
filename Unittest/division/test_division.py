@@ -32,7 +32,7 @@ class TestDivisionDivision(unittest.TestCase):
 
 class TestDivisionMultiplication(unittest.TestCase):
     def test_division_multplication(self):
-        stunde = 1
+        stunde = 2
         while stunde < 24:
             while count_factors(stunde) < 3:    
                 stunde = stunde + 1
