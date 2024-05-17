@@ -1,3 +1,4 @@
+import random
 import pprint
 
 def count_factors(n):
@@ -17,9 +18,23 @@ for i in range(2, 100):
         if i % j == 0:
             factors[i].append(j)
 
+
+prime_numbers = []
+
 for i in range(2, 100):
     prime = (len(factors[i]) == 0)
     if prime == True:
-        print(i)
-        
-pprint.pprint (factors)
+        prime_numbers.append(i)
+
+print(prime_numbers)
+
+#pprint.pprint (factors)
+
+number = random.randrange(2, 100)
+while number in prime_numbers:
+    number = random.randrange(2, 100)
+number_of_factors = len(factors[number])
+
+random_factor = random.choice(factors[number])
+print(random_factor)
+print(number)
