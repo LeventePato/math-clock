@@ -26,7 +26,7 @@ class TestSubtractionDivision(unittest.TestCase):
         stunde = 0
         while stunde < 24:
             x,y,z = factor_subtraction_division(stunde)
-            self.assertEqual(y/z-x, stunde)
+            self.assertEqual(x-(y/z), stunde)
             stunde = stunde + 1
 
 class TestSubtractionMultiplication(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestSubtractionMultiplication(unittest.TestCase):
         while stunde < 24:
             x,y,z = factor_subtraction_multiplication(stunde)
             if x*y*z > 1:
-                self.assertEqual(y*z-x, stunde)
+                self.assertEqual(x-(y*z), stunde)
             stunde = stunde + 1
 
         

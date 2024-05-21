@@ -33,7 +33,7 @@ def factor_subtraction_subtraction(stunde):
 
 def factor_subtraction_division(stunde):
     ergebnis_erste_rechnung = random.randrange(stunde + 1, 50)
-    erste_zahl = ergebnis_erste_rechnung - stunde
+    erste_zahl = ergebnis_erste_rechnung + stunde
     zweite_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
     while ergebnis_erste_rechnung not in faktoren[zweite_zahl]:
         zweite_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
@@ -44,7 +44,7 @@ def factor_subtraction_multiplication(stunde):
     ergebnis_erste_rechnung = random.randrange(stunde + 2, 100)
     while ergebnis_erste_rechnung in prime_numbers:
         ergebnis_erste_rechnung = random.randrange(stunde + 2, 100)
-    erste_zahl = ergebnis_erste_rechnung - stunde 
+    erste_zahl = ergebnis_erste_rechnung + stunde 
     zweite_zahl = random.choice(faktoren[ergebnis_erste_rechnung])
     dritte_zahl = ergebnis_erste_rechnung / zweite_zahl
     return erste_zahl, zweite_zahl, dritte_zahl
