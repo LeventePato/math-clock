@@ -16,13 +16,6 @@ for i in range(2, 100):                     #schaut sich alle Zahlen zwischen 2 
         prime_numbers.append(i)             #wenn i keine Faktoren außer 1 und sich selber hat wird sie als Primzahl gespeichert
 
 
-def teilbarkeit(n):                         #wird benötigt um zu überprüfen ob eine Multiplikation überhaupt Möglich ist
-    for ergebnis_erste_rechnung in range(4, int(n / 2) + 1):
-        if ergebnis_erste_rechnung in faktoren[n]:
-            return True
-    return False                            #überprüft ob es überhaupt Faktoren gibt (True) oder nicht (False)
-
-
 def factor_addition_addition(stunde):
     if stunde < 6:
         return 1, 1, 1
