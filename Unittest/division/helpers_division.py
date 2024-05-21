@@ -25,22 +25,24 @@ def teilbarkeit(n):                         #wird benötigt um zu überprüfen o
 def doppelte_teilbarkeit(n):           #wird nur bei der doppelten Multiplikation benötigt um zu überprüfen ob die Faktoren der Stunde selber Faktoren haben
     for i in range(4, int(n / 2) + 1):
         if i in faktoren[n]:
-            for erste_zahl in range(2, int (i / 2) + 1):
-                if erste_zahl in faktoren[i]:
+            for j in range(2, int (i / 2) + 1):
+                if j in faktoren[i]:
                     return True
     return False                            #überprüft ob ein beliebiger Faktor überhaupt einen Faktor hat (True) oder nicht (False)
 
 
 def factor_division_addition(stunde):
-    if stunde < 3:
+    if stunde < 4:
         return 1, 1, 1
     else:
-        dritte_zahl = stunde - random.randrange (2,stunde - 1)
-        ergebnis_erste_rechnung = stunde - dritte_zahl
-        erste_zahl = ergebnis_erste_rechnung * random.randrange(2, int(100 / ergebnis_erste_rechnung))
+        ergebnis_erste_rechnung = random.randrange(2, stunde - 1)
+        erste_zahl = random.randrange(stunde * 2 + 2, 100)
+        while ergebnis_erste_rechnung not in faktoren[erste_zahl]:
+            erste_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
         zweite_zahl = erste_zahl / ergebnis_erste_rechnung
+        dritte_zahl = stunde - ergebnis_erste_rechnung
         return erste_zahl, zweite_zahl, dritte_zahl
-
+    
 def factor_division_subtraction(stunde):
     ergebnis_erste_rechnung = random.randrange(int(stunde + 2), 49)
     dritte_zahl = ergebnis_erste_rechnung - stunde
@@ -53,27 +55,25 @@ def factor_division_division(stunde):
     if stunde < 1:
         return 1, 1, 1
     else:
-        ergebnis_erste_rechnung = 100
-        while ergebnis_erste_rechnung > 49:
-            ergebnis_erste_rechnung = stunde * random.randrange(2, 49)
+        ergebnis_erste_rechnung = random.randrange(stunde * 2, 50)
+        while stunde not in faktoren[ergebnis_erste_rechnung] and stunde != 1:
+            ergebnis_erste_rechnung = random.randrange(stunde * 2, 50)
+        erste_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
+        while ergebnis_erste_rechnung not in faktoren[erste_zahl]:
+            erste_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
+        zweite_zahl = erste_zahl / ergebnis_erste_rechnung
         dritte_zahl = ergebnis_erste_rechnung / stunde
-        erste_zahl = 101
-        while erste_zahl > 100:
-            erste_zahl = ergebnis_erste_rechnung * random.randrange(2, stunde * 2)
-        zweite_zahl = erste_zahl / ergebnis_erste_rechnung 
-
-
-        erste_zahl = random.randrange(stunde * 4, 100)
-        while doppelte_teilbarkeit(erste_zahl) == False:
-            erste_zahl
         return erste_zahl, zweite_zahl, dritte_zahl
 
 def factor_division_multiplication(stunde):
-    if stunde < 4:
+    if stunde < 4 or stunde in prime_numbers:
         return 1, 1, 1
     else : 
         ergebnis_erste_rechnung = random.choice(faktoren[stunde])
-        zweite_zahl = random.choice(faktoren[ergebnis_erste_rechnung])
-        erste_zahl = ergebnis_erste_rechnung * zweite_zahl
+        erste_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
+        while ergebnis_erste_rechnung not in faktoren[erste_zahl]:
+            erste_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
+        zweite_zahl = erste_zahl / ergebnis_erste_rechnung
         dritte_zahl = stunde / ergebnis_erste_rechnung
         return erste_zahl, zweite_zahl, dritte_zahl
+    
