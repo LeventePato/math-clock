@@ -8,3 +8,7 @@ while True:
             print ("%d:%d" % (stunde, minute))
             print ("%d%s%d%s%d h\n%d%s%d%s%d m" % (hour_encoded[0], hour_encoded[1], hour_encoded[2], hour_encoded[3], hour_encoded[4], minute_encoded[0], minute_encoded[1], minute_encoded[2], minute_encoded[3], minute_encoded[4]))
             print("_______________")
+<<<<<<< HEAD
+=======
+    
+>>>>>>> b0f536db6d817209d300c510a5bd057272493314
