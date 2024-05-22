@@ -50,7 +50,7 @@ def minute_addition_subtraction(minute):
     return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 def minute_addition_division(minute):
-    if minute < 4:
+    if minute < 4 or minute > 49:
         return 1, 1, 1
     else:
         ergebnis_erste_rechnung = random.randrange(2, minute - 1)
@@ -93,13 +93,16 @@ def minute_subtraction_subtraction(minute):
     return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 def minute_subtraction_division(minute):
-    ergebnis_erste_rechnung = random.randrange(minute + 1, 50)
-    erste_zahl = ergebnis_erste_rechnung + minute
-    zweite_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
-    while ergebnis_erste_rechnung not in faktoren[zweite_zahl]:
+    if minute > 48:
+        return 1, 1, 1
+    else:
+        ergebnis_erste_rechnung = random.randrange(minute + 1, 50)
+        erste_zahl = ergebnis_erste_rechnung + minute
         zweite_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
-    dritte_zahl = zweite_zahl / ergebnis_erste_rechnung
-    return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
+        while ergebnis_erste_rechnung not in faktoren[zweite_zahl]:
+            zweite_zahl = random.randrange(ergebnis_erste_rechnung * 2, 100)
+        dritte_zahl = zweite_zahl / ergebnis_erste_rechnung
+        return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 def minute_subtraction_multiplication(minute):
     ergebnis_erste_rechnung = random.randrange(minute + 2, 100)
@@ -113,7 +116,7 @@ def minute_subtraction_multiplication(minute):
 # division
 
 def minute_division_addition(minute):
-    if minute < 4:
+    if minute < 4 or minute > 48:
         return 1, 1, 1
     else:
         ergebnis_erste_rechnung = random.randrange(2, minute - 1)
@@ -125,7 +128,7 @@ def minute_division_addition(minute):
         return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
     
 def minute_division_subtraction(minute):
-    if minute > 47:
+    if minute > 46:
         return 1, 1, 1
     ergebnis_erste_rechnung = random.randrange(int(minute + 2), 49)
     dritte_zahl = ergebnis_erste_rechnung - minute
@@ -134,7 +137,7 @@ def minute_division_subtraction(minute):
     return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 def minute_division_division(minute):
-    if minute < 1 or minute > 25:
+    if minute < 1 or minute > 24:
         return 1, 1, 1
     else:
         ergebnis_erste_rechnung = random.randrange(minute * 2, 50)
@@ -208,9 +211,9 @@ def minute_multiplication_multiplication(minute):
         return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 
-def aufgabe_für_minute_ausgeben(erster_operaror_für_minute, zweiter_operator_für_minute, erste_zahl, zweite_zahl, dritte_zahl):
-    erste_aufgabe = erste_zahl + erster_operaror_für_minute + zweite_zahl
-    gesamte_aufgabe = erste_aufgabe + zweiter_operator_für_minute + dritte_zahl
+def aufgabe_für_minute_ausgeben(erster_operaror_für_minute, zweiter_operator_für_minute, zahlen):
+    erste_aufgabe = "%d%s%d" (zahlen[0] + erster_operaror_für_minute + zahlen[1])
+    gesamte_aufgabe = "%s%s%d" (erste_aufgabe + zweiter_operator_für_minute + zahlen[2])
     print(gesamte_aufgabe)
     return gesamte_aufgabe
 
@@ -397,8 +400,8 @@ def stunde_multiplication_multiplication(stunde):
         return int(erste_zahl), int(zweite_zahl), int(dritte_zahl)
 
 
-def aufgabe_für_stunde_ausgeben(erster_operator_für_stunde, zweiter_operator_für_stunde, erste_zahl, zweite_zahl, dritte_zahl):
-    erste_aufgabe = erste_zahl + erster_operator_für_stunde + zweite_zahl
-    gesamte_aufgabe = erste_aufgabe + zweiter_operator_für_stunde + dritte_zahl
+def aufgabe_für_stunde_ausgeben(erster_operator_für_stunde, zweiter_operator_für_stunde, zahlen):
+    erste_aufgabe = "%d%s%d" % (zahlen[0], erster_operator_für_stunde, zahlen[1])
+    gesamte_aufgabe = "%s%s%d" % (erste_aufgabe, zweiter_operator_für_stunde, zahlen[2])
     print(gesamte_aufgabe)
     return gesamte_aufgabe
