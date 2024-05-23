@@ -12,11 +12,13 @@ pygame.init()
 größe = (480, 320)
 bildschirm = pygame.display.set_mode(größe, pygame.FULLSCREEN)
 
+pygame.mouse.set_visible(False)
+
 font = pygame.font.Font('./font/DIGITALDREAMNARROW.ttf', 48)
 
 running = True
 while running:
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
