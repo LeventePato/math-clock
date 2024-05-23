@@ -12,7 +12,7 @@ pygame.init()
 größe = (800, 600)
 bildschirm = pygame.display.set_mode(größe)
 
-font = pygame.font.Font('/home/levi/Downloads/DIGITALDREAMNARROW.ttf', 70)
+font = pygame.font.Font('./font/DIGITALDREAMNARROW.ttf', 70)
 
 running = True
 while running:
