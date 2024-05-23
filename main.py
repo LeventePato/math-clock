@@ -9,10 +9,10 @@ import helpers
 pygame.init()
 
 
-größe = (800, 600)
+größe = (480, 320)
 bildschirm = pygame.display.set_mode(größe, pygame.FULLSCREEN)
 
-font = pygame.font.Font('./font/DIGITALDREAMNARROW.ttf', 70)
+font = pygame.font.Font('./font/DIGITALDREAMNARROW.ttf', 48)
 
 running = True
 while running:
@@ -41,10 +41,10 @@ while running:
 
 
     schrift_stunde = font.render(aufgabe_für_stunde, True, (255, 255, 255))
-    ausgabe_stunde = schrift_stunde.get_rect(center=(400, 200))
+    ausgabe_stunde = schrift_stunde.get_rect(center=(240, 80))
 
     schrift_minute = font.render(aufgabe_für_minute, True, (255, 255, 255))
-    ausgabe_minute = schrift_minute.get_rect(center=(400, 400))
+    ausgabe_minute = schrift_minute.get_rect(center=(240, 240))
 
 
     bildschirm.fill((0, 0, 0)) 
