@@ -2,7 +2,7 @@ import random
 import functions
 
 
-def aufgabe_für_stunde(stunde):
+def aufgabe_für_stunde_berechnen(stunde):
     
     while True:
         erste_operation_für_stunde = random.randrange(1, 5)
@@ -70,7 +70,7 @@ def aufgabe_für_stunde(stunde):
         if zahlen[0] * zahlen[1] * zahlen[2] > 1:
                 return zahlen[0], erster_operator_für_stunde, zahlen[1], zweiter_operator_für_stunde, zahlen[2]
 
-def aufgabe_für_minute(minute):
+def aufgabe_für_minute_berechnen(minute):
 
     while True:
         erste_operation_für_minute = random.randrange(1, 5)

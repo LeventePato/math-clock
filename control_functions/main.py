@@ -12,7 +12,7 @@ pygame.init()
 größe = (800, 600)
 bildschirm = pygame.display.set_mode(größe)
 
-font = pygame.font.Font('/home/levi/Downloads/DIGITALDREAMNARROW.ttf', 36)
+font = pygame.font.Font('/home/levi/Downloads/DIGITALDREAMNARROW.ttf', 70)
 
 running = True
 while running:
@@ -25,8 +25,7 @@ while running:
                 running = False 
     
     zeit = datetime.now()
-    aktuelle_zeit = zeit.strftime("%H:%M")
-    
+
     stunde_str = zeit.strftime("%H")
     stunde = int(stunde_str)
     
@@ -34,12 +33,19 @@ while running:
     minute = int(minute_str)
 
 
+    aufgabe_für_stunde_str = helpers.aufgabe_für_stunde_berechnen(stunde)
+    aufgabe_für_stunde =  "%.2d%s%.2d%s%.2d h" % (aufgabe_für_stunde_str[0], aufgabe_für_stunde_str[1], aufgabe_für_stunde_str[2], aufgabe_für_stunde_str[3], aufgabe_für_stunde_str[4])
 
-    schrift_stunde = font.render(str(helpers.aufgabe_für_stunde(stunde)), True, (255, 255, 255))
-    ausgabe_stunde = schrift_stunde.get_rect(center=(400, 300))
+    aufgabe_für_minute_str = helpers.aufgabe_für_minute_berechnen(minute)
+    aufgabe_für_minute = "%.2d%s%.2d%s%.2d m" % (aufgabe_für_minute_str[0], aufgabe_für_minute_str[1], aufgabe_für_minute_str[2], aufgabe_für_minute_str[3], aufgabe_für_minute_str[4])
 
-    schrift_minute = font.render(str(helpers.aufgabe_für_minute(minute)), True, (255, 255, 255))
-    ausgabe_minute = schrift_minute.get_rect(center=(400, 700))
+
+    schrift_stunde = font.render(aufgabe_für_stunde, True, (255, 255, 255))
+    ausgabe_stunde = schrift_stunde.get_rect(center=(400, 200))
+
+    schrift_minute = font.render(aufgabe_für_minute, True, (255, 255, 255))
+    ausgabe_minute = schrift_minute.get_rect(center=(400, 400))
+
 
     bildschirm.fill((0, 0, 0)) 
     bildschirm.blit(schrift_stunde, ausgabe_stunde)
