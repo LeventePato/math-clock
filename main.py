@@ -10,7 +10,7 @@ pygame.init()
 
 
 größe = (800, 600)
-bildschirm = pygame.display.set_mode(größe)
+bildschirm = pygame.display.set_mode(größe, pygame.FULLSCREEN)
 
 font = pygame.font.Font('./font/DIGITALDREAMNARROW.ttf', 70)
 
