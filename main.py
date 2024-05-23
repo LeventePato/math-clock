@@ -53,8 +53,13 @@ while running:
     bildschirm.blit(schrift_stunde, ausgabe_stunde)
     bildschirm.blit(schrift_minute, ausgabe_minute)
 
+    gedrehter_bildschirm = pygame.transform.rotate(bildschirm, 180)
+    bildschirm.blit(gedrehter_bildschirm, (0, 0))
+
     pygame.display.flip()
     sleep(5)
 
 pygame.quit()
 sys.exit()
+
+
